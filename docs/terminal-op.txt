@@ -1,0 +1,457 @@
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu May 8 07:59:36 2025
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter user-name: C##SRIK
+Enter password:
+Last Successful login time: Thu May 08 2025 07:45:39 +05:30
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> @'C:\Users\srika\OneDrive\Documents\database_schema.sql'
+DROP TABLE LOAN
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE ACCOUNT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE CUSTOMER
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE BRANCH
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+INSERT INTO BRANCH VALUES ('B0001', 'MAIN BRANCH', 'DELHI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO BRANCH VALUES ('B0002', 'CITY BRANCH', 'MUMBAI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO BRANCH VALUES ('B0003', 'URBAN BRANCH', 'KOLKATA')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO BRANCH VALUES ('B0004', 'RURAL BRANCH', 'BBSR')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO BRANCH VALUES ('B0005', 'CENTRAL BRANCH', 'BHUB')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0001', 'AMIT SHARMA', '9876543210', 'DELHI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0002', 'PRIYA PATEL', '8765432109', 'MUMBAI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0003', 'RAJESH KUMAR', '7654321098', 'KOLKATA')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0004', 'SNEHA GUPTA', '6543210987', 'BBSR')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0005', 'VIKRAM SINGH', '5432109876', 'BHUB')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0006', 'NEHA VERMA', '4321098765', 'DELHI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0007', 'SURESH REDDY', '3210987654', 'MUMBAI')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0008', 'MEENA KUMARI', '2109876543', 'KOLKATA')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0009', 'PRAKASH JAIN', '1098765432', 'BBSR')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO CUSTOMER VALUES ('C0010', 'KAVITA SHARMA', '9087654321', 'BHUB')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0001', 'C0001', 'SAVINGS', 50000.00, 'B0001')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0002', 'C0002', 'CURRENT', 75000.00, 'B0002')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0003', 'C0003', 'FIXED', 100000.00, 'B0003')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0004', 'C0004', 'SAVINGS', 25000.00, 'B0004')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0005', 'C0005', 'CURRENT', 120000.00, 'B0005')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0006', 'C0006', 'SAVINGS', 35000.00, 'B0001')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0007', 'C0007', 'FIXED', 80000.00, 'B0002')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0008', 'C0008', 'SAVINGS', 7000.00, 'B0003')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO ACCOUNT VALUES ('A0009', 'C0009', 'CURRENT', 65000.00, 'B0004')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO LOAN VALUES ('L0001', 'C0001', 200000.00, 'B0001')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO LOAN VALUES ('L0002', 'C0003', 150000.00, 'B0003')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO LOAN VALUES ('L0003', 'C0005', 300000.00, 'B0005')
+            *
+ERROR at line 1:
+ORA-01950: no privileges on tablespace 'USERS'
+
+
+INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002'); -- C0005 has two loans
+                                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+
+Commit complete.
+
+
+no rows selected
+
+
+no rows selected
+
+
+no rows selected
+
+
+no rows selected
+
+SQL> DROP TABLE LOAN;
+
+Table dropped.
+
+SQL> DROP TABLE ACCOUNT;
+
+Table dropped.
+
+SQL> DROP TABLE CUSTOMER;
+
+Table dropped.
+
+SQL> DROP TABLE BRANCH;
+
+Table dropped.
+
+SQL> select * from tab;
+
+TNAME
+--------------------------------------------------------------------------------
+TABTYPE        CLUSTERID
+------------- ----------
+BIN$vDfhiekBRpKJV1GMEUbKKw==$0
+TABLE
+
+BIN$HZUiMSKiTyKPK7KVj6AkrQ==$0
+TABLE
+
+BIN$yCvrLaPRSn6zRyqZRB1Quw==$0
+TABLE
+
+
+TNAME
+--------------------------------------------------------------------------------
+TABTYPE        CLUSTERID
+------------- ----------
+BIN$b77ZeP2EQJyd6y7GpP90QQ==$0
+TABLE
+
+
+SQL> @'C:\Users\srika\OneDrive\Documents\database_schema.sql'
+DROP TABLE LOAN
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE ACCOUNT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE CUSTOMER
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE BRANCH
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002'); -- C0005 has two loans
+                                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+
+Commit complete.
+
+
+SQL> set linesize 150;
+SQL> set pagesize 150;
+SQL> SELECT * FROM BRANCH;
+
+BRANCH_COD BRANCH_NAME                                        BRANCH_CITY
+---------- -------------------------------------------------- --------------------------------------------------
+B0001      MAIN BRANCH                                        DELHI
+B0002      CITY BRANCH                                        MUMBAI
+B0003      URBAN BRANCH                                       KOLKATA
+B0004      RURAL BRANCH                                       BBSR
+B0005      CENTRAL BRANCH                                     BHUB
+
+SQL> SELECT * FROM CUSTOMER;
+
+CUST_NO    NAME                                               PHONE_NO        CITY
+---------- -------------------------------------------------- --------------- --------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210      DELHI
+C0002      PRIYA PATEL                                        8765432109      MUMBAI
+C0003      RAJESH KUMAR                                       7654321098      KOLKATA
+C0004      SNEHA GUPTA                                        6543210987      BBSR
+C0005      VIKRAM SINGH                                       5432109876      BHUB
+C0006      NEHA VERMA                                         4321098765      DELHI
+C0007      SURESH REDDY                                       3210987654      MUMBAI
+C0008      MEENA KUMARI                                       2109876543      KOLKATA
+C0009      PRAKASH JAIN                                       1098765432      BBSR
+C0010      KAVITA SHARMA                                      9087654321      BHUB
+
+10 rows selected.
+
+SQL> SELECT * FROM ACCOUNT;
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0001      C0001      SAVINGS                   50000 B0001
+A0002      C0002      CURRENT                   75000 B0002
+A0003      C0003      FIXED                    100000 B0003
+A0004      C0004      SAVINGS                   25000 B0004
+A0005      C0005      CURRENT                  120000 B0005
+A0006      C0006      SAVINGS                   35000 B0001
+A0007      C0007      FIXED                     80000 B0002
+A0008      C0008      SAVINGS                    7000 B0003
+A0009      C0009      CURRENT                   65000 B0004
+
+9 rows selected.
+
+SQL> SELECT * FROM LOAN;
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0001      C0001           200000 B0001
+L0002      C0003           150000 B0003
+L0003      C0005           300000 B0005
+L0004      C0005           100000 B0002
+
+SQL>

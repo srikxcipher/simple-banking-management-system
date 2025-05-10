@@ -1,0 +1,739 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\srika> sqlplus C##SRIK/user@localhost:1521/XEPDB1;
+
+SQL*Plus: Release 21.0.0.0.0 - Production on Thu May 8 20:20:47 2025
+Version 21.3.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Last Successful login time: Thu May 08 2025 20:11:55 +05:30
+
+Connected to:
+Oracle Database 21c Express Edition Release 21.0.0.0.0 - Production
+Version 21.3.0.0.0
+
+SQL> @C:\Users\srika\OneDrive\Documents\database_schema.sql
+DROP TABLE LOAN
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE ACCOUNT
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE CUSTOMER
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+DROP TABLE BRANCH
+           *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002'); -- C0005 has two loans
+                                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+
+Commit complete.
+
+
+BRANCH_COD BRANCH_NAME
+---------- --------------------------------------------------
+BRANCH_CITY
+--------------------------------------------------
+B0001      MAIN BRANCH
+DELHI
+
+B0002      CITY BRANCH
+MUMBAI
+
+B0003      URBAN BRANCH
+KOLKATA
+
+
+BRANCH_COD BRANCH_NAME
+---------- --------------------------------------------------
+BRANCH_CITY
+--------------------------------------------------
+B0004      RURAL BRANCH
+BBSR
+
+B0005      CENTRAL BRANCH
+BHUB
+
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210
+DELHI
+
+C0002      PRIYA PATEL                                        8765432109
+MUMBAI
+
+C0003      RAJESH KUMAR                                       7654321098
+KOLKATA
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0004      SNEHA GUPTA                                        6543210987
+BBSR
+
+C0005      VIKRAM SINGH                                       5432109876
+BHUB
+
+C0006      NEHA VERMA                                         4321098765
+DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0007      SURESH REDDY                                       3210987654
+MUMBAI
+
+C0008      MEENA KUMARI                                       2109876543
+KOLKATA
+
+C0009      PRAKASH JAIN                                       1098765432
+BBSR
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0010      KAVITA SHARMA                                      9087654321
+BHUB
+
+
+10 rows selected.
+
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0001      C0001      SAVINGS                   50000 B0001
+A0002      C0002      CURRENT                   75000 B0002
+A0003      C0003      FIXED                    100000 B0003
+A0004      C0004      SAVINGS                   25000 B0004
+A0005      C0005      CURRENT                  120000 B0005
+A0006      C0006      SAVINGS                   35000 B0001
+A0007      C0007      FIXED                     80000 B0002
+A0008      C0008      SAVINGS                    7000 B0003
+A0009      C0009      CURRENT                   65000 B0004
+
+9 rows selected.
+
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0001      C0001           200000 B0001
+L0002      C0003           150000 B0003
+L0003      C0005           300000 B0005
+
+SQL> INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002');
+
+1 row created.
+
+SQL> show user;
+USER is "C##SRIK"
+SQL> select * from tab;
+
+TNAME
+--------------------------------------------------------------------------------
+TABTYPE        CLUSTERID
+------------- ----------
+BRANCH
+TABLE
+
+CUSTOMER
+TABLE
+
+ACCOUNT
+TABLE
+
+
+TNAME
+--------------------------------------------------------------------------------
+TABTYPE        CLUSTERID
+------------- ----------
+LOAN
+TABLE
+
+
+SQL> select * from customer;
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210
+DELHI
+
+C0002      PRIYA PATEL                                        8765432109
+MUMBAI
+
+C0003      RAJESH KUMAR                                       7654321098
+KOLKATA
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0004      SNEHA GUPTA                                        6543210987
+BBSR
+
+C0005      VIKRAM SINGH                                       5432109876
+BHUB
+
+C0006      NEHA VERMA                                         4321098765
+DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0007      SURESH REDDY                                       3210987654
+MUMBAI
+
+C0008      MEENA KUMARI                                       2109876543
+KOLKATA
+
+C0009      PRAKASH JAIN                                       1098765432
+BBSR
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0010      KAVITA SHARMA                                      9087654321
+BHUB
+
+C0011      NARENDRA MODI                                      9999999999
+DELHI
+
+
+11 rows selected.
+
+SQL> DELETE FROM CUSTOMER WHERE CUST_NO = C0011;
+DELETE FROM CUSTOMER WHERE CUST_NO = C0011
+                                     *
+ERROR at line 1:
+ORA-00904: "C0011": invalid identifier
+
+
+SQL> DELETE FROM CUSTOMER WHERE CUST_NO = "C0011";
+DELETE FROM CUSTOMER WHERE CUST_NO = "C0011"
+                                     *
+ERROR at line 1:
+ORA-00904: "C0011": invalid identifier
+
+
+SQL> DELETE FROM CUSTOMER WHERE CUST_NO = 'C0011';
+
+1 row deleted.
+
+SQL> SELECT * FROM ACCOUNT ORDER BY CUST_NO;
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0001      C0001      SAVINGS                   50000 B0001
+A0002      C0002      CURRENT                   75000 B0002
+A0003      C0003      FIXED                    100000 B0003
+A0004      C0004      SAVINGS                   25000 B0004
+A0005      C0005      CURRENT                  120000 B0005
+A0006      C0006      SAVINGS                   35000 B0001
+A0007      C0007      FIXED                     80000 B0002
+A0008      C0008      SAVINGS                    7000 B0003
+A0009      C0009      CURRENT                   65000 B0004
+
+9 rows selected.
+
+SQL> @C:\Users\srika\OneDrive\Documents\database_schema.sql
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002'); -- C0005 has two loans
+                                                              *
+ERROR at line 1:
+ORA-00933: SQL command not properly ended
+
+
+
+Commit complete.
+
+
+BRANCH_COD BRANCH_NAME
+---------- --------------------------------------------------
+BRANCH_CITY
+--------------------------------------------------
+B0001      MAIN BRANCH
+DELHI
+
+B0002      CITY BRANCH
+MUMBAI
+
+B0003      URBAN BRANCH
+KOLKATA
+
+
+BRANCH_COD BRANCH_NAME
+---------- --------------------------------------------------
+BRANCH_CITY
+--------------------------------------------------
+B0004      RURAL BRANCH
+BBSR
+
+B0005      CENTRAL BRANCH
+BHUB
+
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210
+DELHI
+
+C0002      PRIYA PATEL                                        8765432109
+MUMBAI
+
+C0003      RAJESH KUMAR                                       7654321098
+KOLKATA
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0004      SNEHA GUPTA                                        6543210987
+BBSR
+
+C0005      VIKRAM SINGH                                       5432109876
+BHUB
+
+C0006      NEHA VERMA                                         4321098765
+DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0007      SURESH REDDY                                       3210987654
+MUMBAI
+
+C0008      MEENA KUMARI                                       2109876543
+KOLKATA
+
+C0009      PRAKASH JAIN                                       1098765432
+BBSR
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0010      KAVITA SHARMA                                      9087654321
+BHUB
+
+
+10 rows selected.
+
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0001      C0001      SAVINGS                   50000 B0001
+A0002      C0002      CURRENT                   75000 B0002
+A0003      C0003      FIXED                    100000 B0003
+A0004      C0004      SAVINGS                   25000 B0004
+A0005      C0005      CURRENT                  120000 B0005
+A0006      C0006      SAVINGS                   35000 B0001
+A0007      C0007      FIXED                     80000 B0002
+A0008      C0008      SAVINGS                    7000 B0003
+A0009      C0009      CURRENT                   65000 B0004
+
+9 rows selected.
+
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0001      C0001           200000 B0001
+L0002      C0003           150000 B0003
+L0003      C0005           300000 B0005
+
+SQL> INSERT INTO LOAN VALUES ('L0004', 'C0005', 100000.00, 'B0002');
+
+1 row created.
+
+SQL> SELECT * FROM V$LOCK;
+SELECT * FROM V$LOCK
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> SELECT * FROM V$LOCK;
+SELECT * FROM V$LOCK
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from customer
+  2  ;
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210
+DELHI
+
+C0002      PRIYA PATEL                                        8765432109
+MUMBAI
+
+C0003      RAJESH KUMAR                                       7654321098
+KOLKATA
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0004      SNEHA GUPTA                                        6543210987
+BBSR
+
+C0005      VIKRAM SINGH                                       5432109876
+BHUB
+
+C0006      NEHA VERMA                                         4321098765
+DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0007      SURESH REDDY                                       3210987654
+MUMBAI
+
+C0008      MEENA KUMARI                                       2109876543
+KOLKATA
+
+C0009      PRAKASH JAIN                                       1098765432
+BBSR
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0010      KAVITA SHARMA                                      9087654321
+BHUB
+
+C0011      NARENDRA MODI                                      9999999999
+AMD
+
+
+11 rows selected.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> set autocommit on;
+SQL> select * from customers;
+select * from customers
+              *
+ERROR at line 1:
+ORA-00942: table or view does not exist
+
+
+SQL> select * from customer;
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210
+DELHI
+
+C0002      PRIYA PATEL                                        8765432109
+MUMBAI
+
+C0003      RAJESH KUMAR                                       7654321098
+KOLKATA
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0004      SNEHA GUPTA                                        6543210987
+BBSR
+
+C0005      VIKRAM SINGH                                       5432109876
+BHUB
+
+C0006      NEHA VERMA                                         4321098765
+DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0007      SURESH REDDY                                       3210987654
+MUMBAI
+
+C0008      MEENA KUMARI                                       2109876543
+KOLKATA
+
+C0009      PRAKASH JAIN                                       1098765432
+BBSR
+
+
+CUST_NO    NAME                                               PHONE_NO
+---------- -------------------------------------------------- ---------------
+CITY
+--------------------------------------------------
+C0010      KAVITA SHARMA                                      9087654321
+BHUB
+
+
+10 rows selected.
+
+SQL> SELECT * FROM LOAN WHERE CUST_NO = 'C0008';
+
+no rows selected
+
+SQL> select * from LOAN;
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0001      C0001           200000 B0001
+L0002      C0003           150000 B0003
+L0003      C0005           300000 B0005
+L0004      C0005           100000 B0002
+
+SQL>
