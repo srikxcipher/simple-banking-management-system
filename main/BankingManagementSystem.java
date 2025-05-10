@@ -155,7 +155,7 @@ public class BankingManagementSystem {
     ResultSet customerRs = checkCustomer.executeQuery();
 
     if (!customerRs.next()) {
-        System.out.println("Customer does not exist. ❌ ");
+        System.out.println("Customer does not exist. ");
         return;
     }
 
@@ -184,25 +184,53 @@ public class BankingManagementSystem {
     }
 
     if (!hasAccounts) {
-        System.out.println("ℹ️ This customer has no accounts.");
+        System.out.println("This customer has no accounts.");
     }
 }
 
 
     static void showLoanDetails() throws SQLException {
-        System.out.print("Enter Customer Number: ");
-        String custNo = scanner.nextLine();
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM LOAN WHERE CUST_NO = ?");
-        ps.setString(1, custNo);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            System.out.printf("%s | %s | %.2f | %s\n",
-                    rs.getString("LOAN_NO"),
-                    rs.getString("CUST_NO"),
-                    rs.getDouble("LOAN_AMOUNT"),
-                    rs.getString("BRANCH_CODE"));
-        }
+    System.out.print("Enter Customer Number: ");
+    String custNo = scanner.nextLine();
+
+    // Check if customer exists and get name
+    PreparedStatement nameStmt = conn.prepareStatement(
+        "SELECT NAME FROM CUSTOMER WHERE CUST_NO = ?");
+    nameStmt.setString(1, custNo);
+    ResultSet nameRs = nameStmt.executeQuery();
+
+    if (!nameRs.next()) {
+        System.out.println("Customer not found.");
+        return;
     }
+
+    String name = nameRs.getString("NAME");
+
+    // Retrieve loan details with branch info
+    PreparedStatement loanStmt = conn.prepareStatement(
+        "SELECT L.LOAN_NO, L.LOAN_AMOUNT, B.BRANCH_NAME, B.BRANCH_CITY " +
+        "FROM LOAN L JOIN BRANCH B ON L.BRANCH_CODE = B.BRANCH_CODE " +
+        "WHERE L.CUST_NO = ?");
+    loanStmt.setString(1, custNo);
+    ResultSet loanRs = loanStmt.executeQuery();
+
+    boolean hasLoans = false;
+    System.out.println("\nLoan Details for Customer: " + name + " [" + custNo + "]\n");
+
+    while (loanRs.next()) {
+        hasLoans = true;
+        System.out.printf("Loan No   : %s\n", loanRs.getString("LOAN_NO"));
+        System.out.printf("Amount    : %.2f\n", loanRs.getDouble("LOAN_AMOUNT"));
+        System.out.printf("Branch    : %s (%s)\n\n",
+                loanRs.getString("BRANCH_NAME"),
+                loanRs.getString("BRANCH_CITY"));
+    }
+
+    if (!hasLoans) {
+        System.out.println("No loan records found for this customer.");
+    }
+}
+
 
     static void depositMoney() throws SQLException {
         System.out.print("Enter Account Number: ");
