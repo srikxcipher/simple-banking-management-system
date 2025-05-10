@@ -144,20 +144,50 @@ public class BankingManagementSystem {
 
 
     static void showAccountDetails() throws SQLException {
-        System.out.print("Enter Customer Number: ");
-        String custNo = scanner.nextLine();
-        PreparedStatement ps = conn.prepareStatement("SELECT * FROM ACCOUNT WHERE CUST_NO = ?");
-        ps.setString(1, custNo);
-        ResultSet rs = ps.executeQuery();
-        while (rs.next()) {
-            System.out.printf("%s | %s | %s | %.2f | %s\n",
-                    rs.getString("ACCT_NO"),
-                    rs.getString("CUST_NO"),
-                    rs.getString("TYPE"),
-                    rs.getDouble("BALANCE"),
-                    rs.getString("BRANCH_CODE"));
-        }
+    System.out.print("Enter Customer Number: ");
+    String custNo = scanner.nextLine();
+
+    // Check if customer exists
+    PreparedStatement checkCustomer = conn.prepareStatement(
+        "SELECT NAME FROM CUSTOMER WHERE CUST_NO = ?"
+    );
+    checkCustomer.setString(1, custNo);
+    ResultSet customerRs = checkCustomer.executeQuery();
+
+    if (!customerRs.next()) {
+        System.out.println("Customer does not exist. ❌ ");
+        return;
     }
+
+    String customerName = customerRs.getString("NAME");
+    System.out.println("\nAccount Details for Customer: " + customerName + " [" + custNo + "]\n");
+
+    // Fetch all accounts for the customer
+    PreparedStatement ps = conn.prepareStatement(
+        "SELECT A.ACCT_NO, A.TYPE, A.BALANCE, B.BRANCH_NAME, B.BRANCH_CITY " +
+        "FROM ACCOUNT A JOIN BRANCH B ON A.BRANCH_CODE = B.BRANCH_CODE " +
+        "WHERE A.CUST_NO = ?"
+    );
+    ps.setString(1, custNo);
+    ResultSet rs = ps.executeQuery();
+
+    boolean hasAccounts = false;
+
+    while (rs.next()) {
+        hasAccounts = true;
+        System.out.printf("Account No: %s\nType      : %s\nBalance   : %.2f\nBranch    : %s (%s)\n\n",
+                rs.getString("ACCT_NO"),
+                rs.getString("TYPE"),
+                rs.getDouble("BALANCE"),
+                rs.getString("BRANCH_NAME"),
+                rs.getString("BRANCH_CITY"));
+    }
+
+    if (!hasAccounts) {
+        System.out.println("ℹ️ This customer has no accounts.");
+    }
+}
+
 
     static void showLoanDetails() throws SQLException {
         System.out.print("Enter Customer Number: ");
