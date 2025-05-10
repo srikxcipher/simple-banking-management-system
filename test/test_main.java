@@ -3,7 +3,7 @@ package test;
 import java.sql.*;
 import java.util.Scanner;
 
-public class BankManagementSystem {
+public class test_main {
     static final String DB_URL = "jdbc:oracle:thin:@localhost:1521/XEPDB1"; 
     static final String USER = "C##SRIK";  
     static final String PASS = "user";    
