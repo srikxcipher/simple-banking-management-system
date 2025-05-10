@@ -1,0 +1,183 @@
+SQL> @C:\Users\srika\OneDrive\Documents\database_schema.sql
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table dropped.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+Table created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+1 row created.
+
+
+Commit complete.
+
+
+BRANCH_COD BRANCH_NAME                                        BRANCH_CITY
+---------- -------------------------------------------------- --------------------------------------------------
+B0001      MAIN BRANCH                                        DELHI
+B0002      CITY BRANCH                                        MUMBAI
+B0003      URBAN BRANCH                                       KOLKATA
+B0004      RURAL BRANCH                                       BBSR
+B0005      CENTRAL BRANCH                                     DELHI
+
+
+CUST_NO    NAME                                               PHONE_NO        CITY
+---------- -------------------------------------------------- --------------- --------------------------------------------------
+C0001      AMIT SHARMA                                        9876543210      DELHI
+C0002      PRIYA PATEL                                        8765432109      MUMBAI
+C0003      RAJESH KUMAR                                       7654321098      KOLKATA
+C0004      SNEHA GUPTA                                        6543210987      BBSR
+C0005      VIKRAM SINGH                                       5432109876      BBSR
+C0006      NEHA VERMA                                         4321098765      DELHI
+C0007      SURESH REDDY                                       3210987654      MUMBAI
+C0008      MEENA KUMARI                                       2109876543      KOLKATA
+C0009      PRAKASH JAIN                                       1098765432      BBSR
+C0010      KAVITA SHARMA                                      9087654321      BBSR
+
+10 rows selected.
+
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0001      C0001      SAVINGS                   50000 B0001
+A0002      C0002      CURRENT                   75000 B0002
+A0003      C0003      FIXED                    100000 B0003
+A0004      C0004      SAVINGS                   25000 B0004
+A0005      C0005      CURRENT                  120000 B0005
+A0006      C0006      SAVINGS                   35000 B0001
+A0007      C0007      FIXED                     80000 B0002
+A0008      C0008      SAVINGS                    7000 B0003
+A0009      C0009      CURRENT                   65000 B0004
+A0010      C0003      SAVINGS                   45000 B0005
+
+10 rows selected.
+
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0001      C0001           200000 B0001
+L0002      C0003           150000 B0003
+L0003      C0005           300000 B0005
+L0004      C0005           100000 B0002
+L0005      C0008            80000 B0003
+
+SQL> SELECT * FROM ACCOUNT WHERE CUST_NO = 'C0003';
+
+ACCT_NO    CUST_NO    TYPE                    BALANCE BRANCH_COD
+---------- ---------- -------------------- ---------- ----------
+A0003      C0003      FIXED                    100000 B0003
+A0010      C0003      SAVINGS                   45000 B0005
+
+SQL> SELECT * FROM LOAN WHERE CUST_NO = 'C0005';
+
+LOAN_NO    CUST_NO    LOAN_AMOUNT BRANCH_COD
+---------- ---------- ----------- ----------
+L0003      C0005           300000 B0005
+L0004      C0005           100000 B0002
+
+SQL>

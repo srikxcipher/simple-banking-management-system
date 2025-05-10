@@ -16,7 +16,7 @@ public class BankingManagementSystem {
             //conn.setAutoCommit(false);
             int choice;
             do {
-                System.out.println("\n=== Banking Management System ===");
+                System.out.println("\n |    Banking Management System    |");
                 System.out.println("1. Show all customer records");
                 System.out.println("2. Add Customer Record");
                 System.out.println("3. Delete Customer Record");
@@ -90,7 +90,7 @@ public class BankingManagementSystem {
         pstmt.setString(1, custNo);
         int rows = pstmt.executeUpdate();
         if (rows > 0) {
-            //conn.commit();  // ✅ Commit after delete
+            //conn.commit();  // Commit after delete
             System.out.println("Customer deleted.");
         } else {
             System.out.println("Customer not found.");
