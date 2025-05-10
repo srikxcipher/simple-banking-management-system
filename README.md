@@ -18,7 +18,7 @@
 
 ## Compile and Run
 
-### Go to main ➡️
+### Go to ➡️ main 
 * Compile
 ```
 javac -cp ".;D:\Oracle\ojdbc11.jar" BankingManagementSystem.java
