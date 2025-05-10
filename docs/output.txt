@@ -1,0 +1,311 @@
+D:\mini-project\main> javac -cp ".;D:\Oracle\ojdbc11.jar" BankingManagementSystem.java
+D:\mini-project\main> java -cp ".;D:\Oracle\ojdbc11.jar" BankingManagementSystem.java 
+Connected to the database!
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 1
+C0001 | AMIT SHARMA | 9876543210 | DELHI
+C0002 | PRIYA PATEL | 8765432109 | MUMBAI
+C0003 | RAJESH KUMAR | 7654321098 | KOLKATA
+C0004 | SNEHA GUPTA | 6543210987 | BBSR
+C0005 | VIKRAM SINGH | 5432109876 | BBSR
+C0006 | NEHA VERMA | 4321098765 | DELHI
+C0007 | SURESH REDDY | 3210987654 | MUMBAI
+C0008 | MEENA KUMARI | 2109876543 | KOLKATA
+C0009 | PRAKASH JAIN | 1098765432 | BBSR
+C0010 | KAVITA SHARMA | 9087654321 | BBSR
+C0011 | NARENDRA MODI | 9999999999 | AMD
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 2
+Enter Customer Number: A0101
+Enter Name: Invalid User
+Enter Phone Number: 1111122222
+Enter City: IND
+Insert failed: ORA-02290: check constraint (C##SRIK.CUSTOMER_CUST_NO_CK) violated
+
+https://docs.oracle.com/error-help/db/ora-02290/
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 3
+Enter Customer Number to delete: C0011
+Customer deleted.
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 1
+C0001 | AMIT SHARMA | 9876543210 | DELHI
+C0002 | PRIYA PATEL | 8765432109 | MUMBAI
+C0003 | RAJESH KUMAR | 7654321098 | KOLKATA
+C0004 | SNEHA GUPTA | 6543210987 | BBSR
+C0005 | VIKRAM SINGH | 5432109876 | BBSR
+C0006 | NEHA VERMA | 4321098765 | DELHI
+C0007 | SURESH REDDY | 3210987654 | MUMBAI
+C0008 | MEENA KUMARI | 2109876543 | KOLKATA
+C0009 | PRAKASH JAIN | 1098765432 | BBSR
+C0010 | KAVITA SHARMA | 9087654321 | BBSR
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 5
+Enter Customer Number: C0003
+
+Account Details for Customer: RAJESH KUMAR [C0003]
+
+Account No: A0003
+Type      : FIXED
+Balance   : 100000.00
+Branch    : URBAN BRANCH (KOLKATA)
+
+Account No: A0010
+Type      : SAVINGS
+Balance   : 45000.00
+Branch    : CENTRAL BRANCH (DELHI)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 6
+Enter Customer Number: C0005
+
+Loan Details for Customer: VIKRAM SINGH [C0005]
+
+Loan No   : L0003
+Amount    : 300000.00
+Branch    : CENTRAL BRANCH (DELHI)
+
+Loan No   : L0004
+Amount    : 100000.00
+Branch    : CITY BRANCH (MUMBAI)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 6
+Enter Customer Number: C0001
+
+Loan Details for Customer: AMIT SHARMA [C0001]
+
+Loan No   : L0001
+Amount    : 200000.00
+Branch    : MAIN BRANCH (DELHI)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 6
+Enter Customer Number: C0009
+
+Loan Details for Customer: PRAKASH JAIN [C0009]
+
+No loan records found for this customer.
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 7
+Enter Account Number: C0004
+Amount to deposit: 20000
+Account not found.
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 1
+C0001 | AMIT SHARMA | 9876543210 | DELHI
+C0002 | PRIYA PATEL | 8765432109 | MUMBAI
+C0003 | RAJESH KUMAR | 7654321098 | KOLKATA
+C0004 | SNEHA GUPTA | 6543210987 | BBSR
+C0005 | VIKRAM SINGH | 5432109876 | BBSR
+C0006 | NEHA VERMA | 4321098765 | DELHI
+C0007 | SURESH REDDY | 3210987654 | MUMBAI
+C0008 | MEENA KUMARI | 2109876543 | KOLKATA
+C0009 | PRAKASH JAIN | 1098765432 | BBSR
+C0010 | KAVITA SHARMA | 9087654321 | BBSR
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 5
+Enter Customer Number: C0004
+
+Account Details for Customer: SNEHA GUPTA [C0004]
+
+Account No: A0004
+Type      : SAVINGS
+Balance   : 25000.00
+Branch    : RURAL BRANCH (BBSR)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 7
+Enter Account Number: A0004
+Amount to deposit: 20000
+Deposit successful.
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 5
+Enter Customer Number: C0004
+
+Account Details for Customer: SNEHA GUPTA [C0004]
+
+Account No: A0004
+Type      : SAVINGS
+Balance   : 45000.00
+Branch    : RURAL BRANCH (BBSR)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 8
+Enter Account Number: A0004
+Amount to withdraw: 25000
+Withdrawal successful.
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 5
+Enter Customer Number: C0004
+
+Account Details for Customer: SNEHA GUPTA [C0004]
+
+Account No: A0004
+Type      : SAVINGS
+Balance   : 20000.00
+Branch    : RURAL BRANCH (BBSR)
+
+
+|    Banking Management System    |
+1. Show all customer records
+2. Add Customer Record
+3. Delete Customer Record
+4. Update Customer Record (Name, Phone, City)
+5. Show Account Details of a Customer
+6. Show Loan Details of a Customer
+7. Deposit Money to an Account
+8. Withdraw Money from an Account
+9. Exit
+Enter your choice: 9
+Exiting...

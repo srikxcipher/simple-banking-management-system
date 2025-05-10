@@ -16,7 +16,7 @@ public class BankingManagementSystem {
             //conn.setAutoCommit(false);
             int choice;
             do {
-                System.out.println("\n |    Banking Management System    |");
+                System.out.println("\n|    Banking Management System    |");
                 System.out.println("1. Show all customer records");
                 System.out.println("2. Add Customer Record");
                 System.out.println("3. Delete Customer Record");
@@ -62,15 +62,16 @@ public class BankingManagementSystem {
         }
     }
 
-    static void addCustomer() throws SQLException {
+    static void addCustomer() {
+    try {
         System.out.print("Enter Customer Number: ");
         String custNo = scanner.nextLine();
         System.out.print("Enter Name: ");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine().toUpperCase();
         System.out.print("Enter Phone Number: ");
         String phone = scanner.nextLine();
         System.out.print("Enter City: ");
-        String city = scanner.nextLine();
+        String city = scanner.nextLine().toUpperCase();
 
         String sql = "INSERT INTO CUSTOMER VALUES (?, ?, ?, ?)";
         PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -78,9 +79,17 @@ public class BankingManagementSystem {
         pstmt.setString(2, name);
         pstmt.setString(3, phone);
         pstmt.setString(4, city);
+
         int rows = pstmt.executeUpdate();
-        System.out.println(rows > 0 ? "Customer added." : "Insert failed.");
+        System.out.println(rows > 0 ? "Customer added." : "Insert failed. Check CustNo.");
+
+    } catch (SQLIntegrityConstraintViolationException e) {
+        System.out.println("Insert failed: " + e.getMessage());
+    } catch (SQLException e) {
+        System.out.println("Database error: " + e.getMessage());
     }
+}
+
 
     static void deleteCustomer() throws SQLException {
         System.out.print("Enter Customer Number to delete: ");
