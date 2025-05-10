@@ -100,32 +100,48 @@ public class BankingManagementSystem {
     
 
     static void updateCustomer() throws SQLException {
-        System.out.print("Enter Customer Number to update: ");
-        String custNo = scanner.nextLine();
+    System.out.print("Enter Customer Number to update: ");
+    String custNo = scanner.nextLine();
 
+    // Update Name
+    System.out.print("Do you want to update the Name? (yes/no): ");
+    String choice = scanner.nextLine().trim().toLowerCase();
+    if (choice.equals("yes")) {
         System.out.print("New Name: ");
         String name = scanner.nextLine();
         PreparedStatement ps1 = conn.prepareStatement("UPDATE CUSTOMER SET NAME = ? WHERE CUST_NO = ?");
         ps1.setString(1, name);
         ps1.setString(2, custNo);
         ps1.executeUpdate();
+    }
 
+    // Update Phone Number
+    System.out.print("Do you want to update the Phone Number? (yes/no): ");
+    choice = scanner.nextLine().trim().toLowerCase();
+    if (choice.equals("yes")) {
         System.out.print("New Phone Number: ");
         String phone = scanner.nextLine();
         PreparedStatement ps2 = conn.prepareStatement("UPDATE CUSTOMER SET PHONE_NO = ? WHERE CUST_NO = ?");
         ps2.setString(1, phone);
         ps2.setString(2, custNo);
         ps2.executeUpdate();
+    }
 
+    // Update City
+    System.out.print("Do you want to update the City? (yes/no): ");
+    choice = scanner.nextLine().trim().toLowerCase();
+    if (choice.equals("yes")) {
         System.out.print("New City: ");
         String city = scanner.nextLine();
         PreparedStatement ps3 = conn.prepareStatement("UPDATE CUSTOMER SET CITY = ? WHERE CUST_NO = ?");
         ps3.setString(1, city);
         ps3.setString(2, custNo);
         ps3.executeUpdate();
-
-        System.out.println("Customer updated.");
     }
+
+    System.out.println("Customer update process completed.");
+}
+
 
     static void showAccountDetails() throws SQLException {
         System.out.print("Enter Customer Number: ");
