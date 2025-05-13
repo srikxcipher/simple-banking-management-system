@@ -28,3 +28,9 @@ javac -cp ".;D:\Oracle\ojdbc11.jar" BankingManagementSystem.java
 ```
 java -cp ".;D:\Oracle\ojdbc11.jar" BankingManagementSystem.java
 ```
+
+---
+
+## Layered Architecture
+
+![Architecture Diagram](https://github.com/srikxcipher/simple-banking-management-system/blob/1a5d7f392ee3fd860152c836fa560fc931a659a4/docs/layered-arch.png)
